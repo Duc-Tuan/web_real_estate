@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Family_Home';
+  src: url(../assets/Fonts/Family_Home.ttf);
+}
+
+:root {
+  --color-white: white;
+  --color-black: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
