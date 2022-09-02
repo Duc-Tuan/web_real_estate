@@ -1,0 +1,75 @@
+.ItemCard {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 6px 0;
+
+  .imgBox {
+    width: 100px;
+    height: 100px;
+    border-radius: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: absolute;
+    top: -20px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      position: absolute;
+      width: 60%;
+    }
+  }
+
+  .imgContent {
+    width: 160px;
+    background: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    padding: 20px;
+    padding-top: 50px;
+
+    .name {
+      font-size: 1rem;
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .ratings {
+        line-height: 1.6;
+
+        .price {
+          font-size: 0.8rem;
+          span {
+            color: #f8901c;
+            font-size: 0.6rem;
+          }
+        }
+      }
+
+      .addtoCard {
+        background: #f8901c;
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        font-size: 0.8rem;
+        color: #faf9fb;
+      }
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { DefaultLayout } from '~/layouts';
@@ -16,7 +17,7 @@ function App() {
             if (router.layout) {
               Layout = router.layout;
             } else if (router.layout === null) {
-              Layout = <></>;
+              Layout = Fragment;
             }
 
             return (

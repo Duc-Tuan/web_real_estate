@@ -1,0 +1,29 @@
+li{
+    display: flex;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+
+    a{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: #373848;
+        transition: 0.5s;
+
+        .icon{
+            position: relative;
+            display: block;
+            line-height: 70px;
+            text-align: center;
+            transition: 0.5s;
+        }
+    }
+}

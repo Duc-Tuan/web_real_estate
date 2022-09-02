@@ -1,13 +1,133 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.orange {
+  color: #f8901c !important;
+}
+
+.gray{
+  color: #373848 !important;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.App {
+  width: 100vw;
+  background: #faf9fb;
+  overflow-x: hidden;
+}
+
+.App::-webkit-scrollbar {
+  display: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul#menu li:nth-child(1) {
+  transform: translateY(0);
+}
+
+ul#menu li.active a {
+  transform: translateY(-26px);
+}
+
+ul#menu li.active a span {
+  color: #f9fafb;
+  transition: 0.5s;
+}
+
+ul#menu li:nth-child(1).active ~ div {
+  transform: translateX(calc(60px * 0));
+}
+
+ul#menu li:nth-child(2).active ~ div {
+  transform: translateX(calc(60px * 1));
+}
+
+ul#menu li:nth-child(3).active ~ div {
+  transform: translateX(calc(60px * 2));
+}
+ul#menu li:nth-child(4).active ~ div {
+  transform: translateX(calc(60px * 3));
+}
+ul#menu li:nth-child(5).active ~ div {
+  transform: translateX(calc(60px * 4));
+}
+ul#menu li:nth-child(6).active ~ div {
+  transform: translateX(calc(60px * 5));
+}
+
+/* MenuCart */
+.rowMenuCard {
+  width: 80px;
+  min-width: 80px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  transition: 0.5s;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.rowMenuCard:hover,
+.rowMenuCard.active {
+  background: #f8901c;
+}
+
+.rowMenuCard:hover #imgBox,
+.rowMenuCard.active #imgBox {
+  background: #fff;
+}
+
+.rowMenuCard:hover #imgBox img,
+.rowMenuCard.active #imgBox img {
+  width: 80%;
+  height: 80%;
+  transition: 0.5s;
+}
+
+.rowMenuCard:hover h3,
+.rowMenuCard.active h3 {
+  color: #fff;
+}
+
+.rowMenuCard:hover #laodMenu,
+.rowMenuCard.active #laodMenu {
+  background: #fff;
+}
+
+
+#dishItemContainer .isfavourite {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  transition: 0.5s;
+  font-size: 1.1rem;
+  color: #ff000088;
+}
+
+#dishItemContainer .isfavourite.active{
+  color: red;
+  filter: drop-shadow(0px 0px 8px #ff000088);
+}
+

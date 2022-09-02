@@ -1,0 +1,36 @@
+.wapper {
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2a2b3c;
+  }
+
+  &,
+  .viewAll {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .viewAll {
+    p {
+      font-size: 0.8rem;
+      color: #f8901c;
+      font-weight: 400;
+    }
+
+    span{
+        background: #f8901c;
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px;
+        color: white;
+        font-size: 0.8rem;
+    }
+  }
+}

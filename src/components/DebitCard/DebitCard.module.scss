@@ -1,0 +1,85 @@
+.wapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+
+  .cardLogo,
+  .cardChip,
+  .card_number,
+  .card_name,
+  .card_from,
+  .card_to,
+  .card_ring {
+    position: absolute;
+  }
+
+  .cardLogo {
+    width: 60px;
+    top: 30px;
+    right: 30px;
+    height: auto;
+  }
+
+  .cardChip {
+    width: 40px;
+    height: auto;
+    top: 50px;
+    left: 30px;
+  }
+
+  .card_number,
+  .card_name,
+  .card_from,
+  .card_to,
+  .card_ring {
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 2px;
+  }
+
+  .card_number {
+    left: 30px;
+    bottom: 60px;
+  }
+
+  .card_name {
+    font-size: 1rem;
+    bottom: 30px;
+    left: 30px;
+  }
+
+  .card_from {
+    font-size: 1rem;
+    bottom: 30px;
+    right: 90px;
+  }
+
+  .card_to {
+    bottom: 30px;
+    right: 30px;
+    font-size: 1rem;
+  }
+
+  .card_ring {
+    height: 400px;
+    width: 400px;
+    border-radius: 100vw;
+    background: transparent;
+    border: 50px solid rgba(0, 0, 0, 0.1);
+    top: -250px;
+    right: -250px;
+
+    &::before{
+        position: absolute;
+        content: '';
+        width: 500px;
+        height: 500px;
+        border-radius: 100vw;
+        background: transparent;
+        border: 50px solid rgba(0, 0, 0, 0.1);
+        top: 180px;
+        right: -150px;
+    }
+  }
+}

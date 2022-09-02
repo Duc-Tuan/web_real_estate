@@ -1,0 +1,40 @@
+.wapper{
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    h3{
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: #2a2b3c;
+    }
+
+    p{
+        font-size: 1rem;
+        width: 200px;
+        color: #989594;
+        margin: 5px 0;
+
+        span{
+            color: #f8901c;
+            font-weight: 500;
+        }
+    }
+
+    a{
+        background: #f8901c;
+        padding: 5px 15px;
+        border-radius: 100vw;
+        color: #faf9fa;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover{
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+            transition: 0.5s;
+        }
+    }
+}
