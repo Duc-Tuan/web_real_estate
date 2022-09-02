@@ -20,15 +20,16 @@ import MenuCart from '~/components/MenuCart';
 import { MenuItems, Items } from '~/assets/Data';
 
 import delivery from '~/assets/Images/delivery.png';
-// import burger3 from '~/assets/Images/burger3.png';
 import ItemCard from '~/components/ItemCard';
 import DebitCard from '~/components/DebitCard';
 import CartItem from '~/components/CartItem';
+import { useStateValue } from '~/hooks/StateProvider';
 
 const ctx = classNames.bind(style);
 
 function Home() {
   const [isMainData, setIsMainData] = useState(Items.filter((element) => element.itemId === 'buger01'));
+  const [{ cart }, dispatch] = useStateValue();
 
   useEffect(() => {
     {
@@ -52,13 +53,11 @@ function Home() {
 
       menuCards.forEach((n) => n.addEventListener('click', setMenuCardAcitve));
     }
-  }, []);
+  }, [isMainData]);
 
   const setData = (itemId) => {
     setIsMainData(Items.filter((element) => element.itemId === itemId));
   };
-
-  useEffect(() => {}, []);
 
   return (
     <main className={ctx('wapper')}>
@@ -111,22 +110,43 @@ function Home() {
         </div>
 
         {/* rightMenu */}
-        <div className={ctx('rightMenu')}>
+        <div id="rightMenu" className={ctx('rightMenu')}>
           <div className={ctx('debitCardContainer')}>
             <div className={ctx('debitCard')}>
               <DebitCard />
             </div>
           </div>
 
-          <div className={ctx('cartCheckOutContainer')}>
-            <div className={ctx('cartContainer')}>
-              <SubMenuContainer name={'Carts Items'} icon={<FontAwesomeIcon icon={faAngleRight} />} />
-
-              <div className={ctx('cartItems')}>
-                  <CartItem name={""} img={""} qty={"4"} price={'7.95'}/>
-              </div>
-            </div>
+          {!cart ? (
+            <div className={ctx('addSomeItem')}>
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/food-delivery-37c59.appspot.com/o/Images%2FemptyCart.png?alt=media&token=50b733d4-cdd9-4025-bffe-8efa4066ca24"
+                alt=""
+                className="emptyCart"
+              />
           </div>
+          ) : (
+            <div className={ctx('cartCheckOutContainer')}>
+              <SubMenuContainer name={'Carts Items'} icon={<FontAwesomeIcon icon={faAngleRight} />} />
+              <div className={ctx('cartContainer')}>
+                <div className={ctx('cartItems')}>
+                  {cart &&
+                    cart.map((data) => (
+                      <CartItem key={data.id} itemId={data.id} name={data.name} img={data.imgSrc} price={data.price} />
+                    ))}
+                </div>
+              </div>
+
+              <div className={ctx('totalSections')}>
+                <h3>Total</h3>
+                <p>
+                  <span>$ </span>45.0
+                </p>
+              </div>
+
+              <button className={ctx('checkOut')}>Check Out</button>
+            </div>
+          )}
         </div>
       </div>
 

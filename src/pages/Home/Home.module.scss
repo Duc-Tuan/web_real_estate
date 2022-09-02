@@ -72,14 +72,29 @@ main {
       display: flex;
       flex-direction: column;
       align-items: center;
+      transform: translateX(200%);
       padding: 20px 10px;
       transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+
+      .addSomeItem{
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        img{
+          width: 100%;
+        }
+      }
 
       .debitCardContainer {
         padding: 10px;
         width: 100%;
         height: auto;
+        margin-bottom: 10px;
 
         .debitCard {
           position: relative;
@@ -120,7 +135,59 @@ main {
       }
 
       .cartCheckOutContainer{
-        width: 100%;
+        width: 90%;
+        min-width: 320px;
+
+        .cartContainer{
+          width: 100%;
+          min-height: 260px;
+          max-height: 260px;
+          margin-top: 10px;
+          overflow-y: scroll;
+          overflow-x: hidden;
+
+          &::-webkit-scrollbar{
+            display: none;
+          }
+        }
+
+        .totalSections{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 5px 8px;
+          margin: 15px 0px;
+
+          h3{
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2a2b3c;
+          }
+
+          p{
+            font-weight: bold;
+            font-size: 1.2rem;
+
+            span{
+              font-size: 1rem;
+              color: #f8901c;
+            } 
+          }
+        }
+
+        .checkOut{
+          outline: none;
+          border: none;
+          width: 100%;
+          padding: 10px 20px;
+          background: #f8901c;
+          border-radius: 100vw;
+          color: #faf9fa;
+          font-size: 1.2rem;
+          font-weight: bold;
+          letter-spacing: 2px;
+        }
       }
     }
   }
@@ -174,6 +241,35 @@ main {
           border-top-left-radius: 20px;
           box-shadow: 0px -10px 0 0 #faf9fa;
         }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 950px) {
+  main{
+    display: flex;
+
+    .bottomMenu{
+      left: 18%;
+      width: 40%;
+    }
+
+    .home{
+      .mainContainer{
+        width: calc(100% - 350px);
+        padding: 10px 30px;
+
+        .banner{
+          height: 160px;
+        }
+      }
+
+      .rightMenu{
+        position: fixed;
+        z-index: 1;
+        transform: translateX(0%);
+        padding: 20px 15px;
       }
     }
   }

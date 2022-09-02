@@ -1,15 +1,32 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faPlus, faStar } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 
 import style from './ItemCard.module.scss';
+import { Items } from '~/assets/Data';
+import { useStateValue } from '~/hooks/StateProvider';
+import { actionType } from '~/hooks/Reducer';
+let cartData = [];
 
 const ctx = classNames.bind(style);
 
 function ItemCard({ img, name, rating, price, itemId }) {
   const [isFavourite, setIsFavourite] = useState(false);
   const [currentValue, setCurrentValue] = useState(Math.floor(rating));
+
+  const [isCard, setIsCard] = useState(null);
+  const [{}, dispatch] = useStateValue();
+  
+  useEffect(() => { 
+    if(isCard) {
+      cartData.push(isCard);
+      dispatch({
+        type: actionType.SET_CART,
+        cart: cartData,
+      })
+    }
+  },[isCard]);
 
   const handleClick = (value) => {
     setCurrentValue(value);
@@ -41,7 +58,7 @@ function ItemCard({ img, name, rating, price, itemId }) {
               {price}
             </h3>
           </div>
-          <span className={ctx('addtoCard')}>
+          <span className={ctx('addtoCard')} onClick={() => setIsCard(Items.find(n => n.id === itemId))} >
             <FontAwesomeIcon icon={faPlus} />
           </span>
         </div>

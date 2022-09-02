@@ -118,3 +118,30 @@ header{
     }
   }
 }
+
+@media screen and (min-width: 650px) {
+  header{
+    .inputBox {
+      width: 60%;
+    }
+  }
+}
+
+@media screen and (min-width: 950px) {
+  header{
+    .inputBox {
+      width: 60%;
+    }
+
+    .toggleMenu{
+      display: none;
+    }
+
+    .profileContainer{
+      .userName{
+        display: block;
+        font-size: 1rem;
+      }
+    }
+  }
+}
