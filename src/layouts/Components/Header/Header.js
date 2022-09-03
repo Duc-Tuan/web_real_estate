@@ -5,6 +5,7 @@ import style from './Header.module.scss';
 
 import logo from '~/assets/Images/logo.png';
 import avat from '~/assets/Images/profile.jpg';
+import { Link } from 'react-router-dom';
 
 const ctx = classNames.bind(style);
 
@@ -15,7 +16,9 @@ function Header() {
 
   return (
     <header className={ctx('header')}>
-      <img src={logo} alt="" className={ctx('logo')} />
+      <Link to="/" >
+        <img src={logo} alt="" className={ctx('logo')} />
+      </Link>
 
       <div className={ctx('inputBox')}>
         <FontAwesomeIcon icon={faSearch} className={ctx('searchIcon')} />

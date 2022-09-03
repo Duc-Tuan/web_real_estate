@@ -1,19 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAngleRight,
-  faChartSimple,
-  faFile,
-  faGauge,
-  faHeart,
-  faHome,
-  faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 
 import classNames from 'classnames/bind';
 import style from './Home.module.scss';
 
-import Menu from '~/components/menu';
 import Banner from '~/components/Banner';
 import SubMenuContainer from '~/components/SubMenuContainer';
 import MenuCart from '~/components/MenuCart';
@@ -124,7 +117,7 @@ function Home() {
                 alt=""
                 className="emptyCart"
               />
-          </div>
+            </div>
           ) : (
             <div className={ctx('cartCheckOutContainer')}>
               <SubMenuContainer name={'Carts Items'} icon={<FontAwesomeIcon icon={faAngleRight} />} />
@@ -148,19 +141,6 @@ function Home() {
             </div>
           )}
         </div>
-      </div>
-
-      <div className={ctx('bottomMenu')}>
-        <ul className={ctx('menu')} id="menu">
-          <Menu link={'#'} icon={<FontAwesomeIcon icon={faHome} />} isHome />
-          <Menu link={'#'} icon={<FontAwesomeIcon icon={faChartSimple} />} />
-          <Menu link={'#'} icon={<FontAwesomeIcon icon={faUser} />} />
-          <Menu link={'#'} icon={<FontAwesomeIcon icon={faHeart} />} />
-          <Menu link={'#'} icon={<FontAwesomeIcon icon={faFile} />} />
-          <Menu link={'#'} icon={<FontAwesomeIcon icon={faGauge} />} />
-
-          <div className={ctx('indicators')}></div>
-        </ul>
       </div>
     </main>
   );
